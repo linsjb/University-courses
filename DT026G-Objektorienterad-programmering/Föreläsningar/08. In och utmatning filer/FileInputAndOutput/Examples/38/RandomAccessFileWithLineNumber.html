@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - RandomAccessFile.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "RandomAccessFile.html" method = "get">
+<input type = "submit" value = "Show Code Without Line Numbers" />
+</form>
+<pre>
+  1&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;iostream&gt;
+  2&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;fstream&gt;
+  3&nbsp;&nbsp;<span class = "keyword">#include</span> <span class = "literal">"Student.h"</span>
+  4&nbsp;&nbsp;<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+  5&nbsp;&nbsp;
+  6&nbsp;&nbsp;<span class = "keyword">void</span> displayStudent(<span class = "keyword">const</span> Student& student)
+  7&nbsp;&nbsp;{
+  8&nbsp;&nbsp;  cout &lt;&lt; student.getFirstName() &lt;&lt; <span class = "literal">" "</span>;
+  9&nbsp;&nbsp;  cout &lt;&lt; student.getMi() &lt;&lt; <span class = "literal">" "</span>;
+ 10&nbsp;&nbsp;  cout &lt;&lt; student.getLastName() &lt;&lt; <span class = "literal">" "</span>;
+ 11&nbsp;&nbsp;  cout &lt;&lt; student.getScore() &lt;&lt; endl;
+ 12&nbsp;&nbsp;}
+ 13&nbsp;&nbsp;
+ 14&nbsp;&nbsp;<span class = "keyword">int</span> main()
+ 15&nbsp;&nbsp;{ 
+ 16&nbsp;&nbsp;  fstream binaryio; <span class = "comment">// Create stream object</span>
+ 17&nbsp;&nbsp;  binaryio.open(<span class = "literal">"student.dat"</span>, ios::out | ios::binary);
+ 18&nbsp;&nbsp;	
+ 19&nbsp;&nbsp;  Student student1(<span class = "literal">"FirstName1"</span>, <span class = "literal">'A'</span>, <span class = "literal">"LastName1"</span>, <span class = "literal">10</span>);
+ 20&nbsp;&nbsp;  Student student2(<span class = "literal">"FirstName2"</span>, <span class = "literal">'B'</span>, <span class = "literal">"LastName2"</span>, <span class = "literal">20</span>);
+ 21&nbsp;&nbsp;  Student student3(<span class = "literal">"FirstName3"</span>, <span class = "literal">'C'</span>, <span class = "literal">"LastName3"</span>, <span class = "literal">30</span>);
+ 22&nbsp;&nbsp;  Student student4(<span class = "literal">"FirstName4"</span>, <span class = "literal">'D'</span>, <span class = "literal">"LastName4"</span>, <span class = "literal">40</span>);
+ 23&nbsp;&nbsp;  Student student5(<span class = "literal">"FirstName5"</span>, <span class = "literal">'E'</span>, <span class = "literal">"LastName5"</span>, <span class = "literal">50</span>);
+ 24&nbsp;&nbsp;  Student student6(<span class = "literal">"FirstName6"</span>, <span class = "literal">'F'</span>, <span class = "literal">"LastName6"</span>, <span class = "literal">60</span>);
+ 25&nbsp;&nbsp;  Student student7(<span class = "literal">"FirstName7"</span>, <span class = "literal">'G'</span>, <span class = "literal">"LastName7"</span>, <span class = "literal">70</span>);
+ 26&nbsp;&nbsp;  Student student8(<span class = "literal">"FirstName8"</span>, <span class = "literal">'H'</span>, <span class = "literal">"LastName8"</span>, <span class = "literal">80</span>);
+ 27&nbsp;&nbsp;  Student student9(<span class = "literal">"FirstName9"</span>, <span class = "literal">'I'</span>, <span class = "literal">"LastName9"</span>, <span class = "literal">90</span>);
+ 28&nbsp;&nbsp;  Student student10(<span class = "literal">"FirstName10"</span>, <span class = "literal">'J'</span>, <span class = "literal">"LastName10"</span>, <span class = "literal">100</span>);
+ 29&nbsp;&nbsp;
+ 30&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 31&nbsp;&nbsp;    (&student1), <span class = "keyword">sizeof</span>(Student));
+ 32&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 33&nbsp;&nbsp;    (&student2), <span class = "keyword">sizeof</span>(Student));
+ 34&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 35&nbsp;&nbsp;    (&student3), <span class = "keyword">sizeof</span>(Student));
+ 36&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 37&nbsp;&nbsp;    (&student4), <span class = "keyword">sizeof</span>(Student));
+ 38&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 39&nbsp;&nbsp;    (&student5), <span class = "keyword">sizeof</span>(Student));
+ 40&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 41&nbsp;&nbsp;    (&student6), <span class = "keyword">sizeof</span>(Student));
+ 42&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 43&nbsp;&nbsp;    (&student7), <span class = "keyword">sizeof</span>(Student));
+ 44&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 45&nbsp;&nbsp;    (&student8), <span class = "keyword">sizeof</span>(Student));
+ 46&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 47&nbsp;&nbsp;    (&student9), <span class = "keyword">sizeof</span>(Student));
+ 48&nbsp;&nbsp;  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 49&nbsp;&nbsp;    (&student10), <span class = "keyword">sizeof</span>(Student));
+ 50&nbsp;&nbsp;
+ 51&nbsp;&nbsp;  binaryio.close();
+ 52&nbsp;&nbsp;
+ 53&nbsp;&nbsp;  <span class = "comment">// Read student back from the file</span>
+ 54&nbsp;&nbsp;  binaryio.open(<span class = "literal">"student.dat"</span>, ios::in | ios::binary);
+ 55&nbsp;&nbsp;
+ 56&nbsp;&nbsp;  Student studentNew;
+ 57&nbsp;&nbsp;
+ 58&nbsp;&nbsp;  binaryio.seekg(<span class = "literal">2</span> * <span class = "keyword">sizeof</span>(Student));
+ 59&nbsp;&nbsp;
+ 60&nbsp;&nbsp;  cout &lt;&lt; <span class = "literal">"Current position is "</span> &lt;&lt; binaryio.tellg() &lt;&lt; endl;
+ 61&nbsp;&nbsp;
+ 62&nbsp;&nbsp;  binaryio.read(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+ 63&nbsp;&nbsp;    (&studentNew), <span class = "keyword">sizeof</span>(Student));
+ 64&nbsp;&nbsp;
+ 65&nbsp;&nbsp;  displayStudent(studentNew);
+ 66&nbsp;&nbsp;
+ 67&nbsp;&nbsp;  cout &lt;&lt; <span class = "literal">"Current position is "</span> &lt;&lt; binaryio.tellg() &lt;&lt; endl;
+ 68&nbsp;&nbsp;
+ 69&nbsp;&nbsp;  binaryio.close();
+ 70&nbsp;&nbsp;
+ 71&nbsp;&nbsp;  <span class = "keyword">return</span> <span class = "literal">0</span>;
+ 72&nbsp;&nbsp;}
+</pre>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - HexDigit2Dec.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "HexDigit2DecWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;cctype&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  cout &lt;&lt; <span class = "literal">"Enter a hex digit: "</span>;
+  <span class = "keyword">char</span> hexDigit;
+  cin &gt;&gt; hexDigit;
+	     
+  hexDigit = toupper(hexDigit);
+  <span class = "keyword">if</span> (hexDigit &lt;= <span class = "literal">'F'</span> && hexDigit &gt;= <span class = "literal">'A'</span>) 
+  {
+    <span class = "keyword">int</span> value = <span class = "literal">10</span> + hexDigit - <span class = "literal">'A'</span>;
+    cout &lt;&lt; <span class = "literal">"The decimal value for hex digit "</span> 
+      &lt;&lt; hexDigit &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; value &lt;&lt; endl;
+  }
+  <span class = "keyword">else</span> <span class = "keyword">if</span> (isdigit(hexDigit)) 
+  {
+    cout &lt;&lt; <span class = "literal">"The decimal value for hex digit "</span> 
+      &lt;&lt; hexDigit &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; hexDigit &lt;&lt; endl;
+  }
+  <span class = "keyword">else</span> 
+  {
+    cout &lt;&lt; hexDigit &lt;&lt; <span class = "literal">" is an invalid input"</span> &lt;&lt; endl;
+  }
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

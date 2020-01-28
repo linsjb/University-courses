@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - TotalArea.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "TotalArea.html" method = "get">
+<input type = "submit" value = "Show Code Without Line Numbers" />
+</form>
+<pre>
+  1&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;iostream&gt;
+  2&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;iomanip&gt;
+  3&nbsp;&nbsp;<span class = "keyword">#include</span> <span class = "literal">"CircleWithPrivateDataFields.h"</span>
+  4&nbsp;&nbsp;<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+  5&nbsp;&nbsp;
+  6&nbsp;&nbsp;<span class = "comment">// Add circle areas</span>
+  7&nbsp;&nbsp;<span class = "keyword">double</span> sum(Circle circleArray[], <span class = "keyword">int</span> size)
+  8&nbsp;&nbsp;{
+  9&nbsp;&nbsp;  <span class = "comment">// Initialize sum</span>
+ 10&nbsp;&nbsp;  <span class = "keyword">double</span> sum = <span class = "literal">0</span>;
+ 11&nbsp;&nbsp;
+ 12&nbsp;&nbsp;  <span class = "comment">// Add areas to sum</span>
+ 13&nbsp;&nbsp;  <span class = "keyword">for</span> (<span class = "keyword">int</span> i = <span class = "literal">0</span>; i &lt; size; i++)
+ 14&nbsp;&nbsp;    sum += circleArray[i].getArea();
+ 15&nbsp;&nbsp;
+ 16&nbsp;&nbsp;  <span class = "keyword">return</span> sum;
+ 17&nbsp;&nbsp;}
+ 18&nbsp;&nbsp;
+ 19&nbsp;&nbsp;<span class = "comment">// Print an array of circles and their total area</span>
+ 20&nbsp;&nbsp;<span class = "keyword">void</span> printCircleArray(Circle circleArray[], <span class = "keyword">int</span> size)
+ 21&nbsp;&nbsp;{
+ 22&nbsp;&nbsp;  cout &lt;&lt; setw(<span class = "literal">35</span>) &lt;&lt; left &lt;&lt; <span class = "literal">"Radius"</span> &lt;&lt; setw(<span class = "literal">8</span>) &lt;&lt; <span class = "literal">"Area"</span> &lt;&lt; endl;
+ 23&nbsp;&nbsp;  <span class = "keyword">for</span> (<span class = "keyword">int</span> i = <span class = "literal">0</span>; i &lt; size; i++)
+ 24&nbsp;&nbsp;  {
+ 25&nbsp;&nbsp;    cout &lt;&lt; setw(<span class = "literal">35</span>) &lt;&lt; left &lt;&lt; circleArray[i].getRadius() 
+ 26&nbsp;&nbsp;      &lt;&lt; setw(<span class = "literal">8</span>) &lt;&lt; circleArray[i].getArea() &lt;&lt; endl;
+ 27&nbsp;&nbsp;  }
+ 28&nbsp;&nbsp;
+ 29&nbsp;&nbsp;  cout &lt;&lt; <span class = "literal">"-----------------------------------------"</span> &lt;&lt; endl;
+ 30&nbsp;&nbsp;
+ 31&nbsp;&nbsp;  <span class = "comment">// Compute and display the result</span>
+ 32&nbsp;&nbsp;  cout &lt;&lt; setw(<span class = "literal">35</span>) &lt;&lt; left &lt;&lt; <span class = "literal">"The total area of circles is"</span> 
+ 33&nbsp;&nbsp;    &lt;&lt; setw(<span class = "literal">8</span>) &lt;&lt; sum(circleArray, size) &lt;&lt; endl;
+ 34&nbsp;&nbsp;}
+ 35&nbsp;&nbsp;
+ 36&nbsp;&nbsp;<span class = "keyword">int</span> main()
+ 37&nbsp;&nbsp;{
+ 38&nbsp;&nbsp;  <span class = "keyword">const</span> <span class = "keyword">int</span> SIZE = <span class = "literal">10</span>;
+ 39&nbsp;&nbsp;
+ 40&nbsp;&nbsp;  <span class = "comment">// Create a Circle object with radius 1</span>
+ 41&nbsp;&nbsp;  Circle circleArray[SIZE];
+ 42&nbsp;&nbsp;
+ 43&nbsp;&nbsp;  <span class = "keyword">for</span> (<span class = "keyword">int</span> i = <span class = "literal">0</span>; i &lt; SIZE; i++)
+ 44&nbsp;&nbsp;  {
+ 45&nbsp;&nbsp;    circleArray[i].setRadius(i + <span class = "literal">1</span>);
+ 46&nbsp;&nbsp;  }
+ 47&nbsp;&nbsp;
+ 48&nbsp;&nbsp;  printCircleArray(circleArray, SIZE);
+ 49&nbsp;&nbsp;
+ 50&nbsp;&nbsp;  <span class = "keyword">return</span> <span class = "literal">0</span>;
+ 51&nbsp;&nbsp;}
+</pre>
+</body>
+</html>

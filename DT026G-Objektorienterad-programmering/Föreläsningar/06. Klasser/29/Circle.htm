@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - Circle.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "CircleWithLineNumber.htm" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#ifndef</span> CIRCLE_H
+<span class = "keyword">#define</span> CIRCLE_H 
+
+<span class = "keyword">class</span> Circle
+{
+<span class = "keyword">public</span>:
+  <span class = "comment">// Construct a default circle object</span>
+  Circle();
+
+  <span class = "comment">// Construct a circle object</span>
+  Circle(<span class = "keyword">double</span>);
+
+  <span class = "comment">// Return the area of this circle</span>
+  <span class = "keyword">double</span> getArea();
+
+  <span class = "comment">// getter</span>
+  <span class = "keyword">double</span> getRadius();
+
+  <span class = "comment">// setter</span>
+  <span class = "keyword">void</span> setRadius(<span class = "keyword">double</span> newRadius);
+
+<span class = "keyword">private</span>:
+  <span class = "comment">// The radius of this circle</span>
+  <span class = "keyword">double</span> radius;
+};
+
+<span class = "keyword">#endif</span>
+</pre>
+</body>
+</html>

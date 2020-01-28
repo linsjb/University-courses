@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - PassObjectByValue.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "PassObjectByValue.html" method = "get">
+<input type = "submit" value = "Show Code Without Line Numbers" />
+</form>
+<pre>
+  1&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;iostream&gt;
+  2&nbsp;&nbsp;<span class = "comment">// CircleWithPrivateDataFields.h is defined in Listing 9.9</span>
+  3&nbsp;&nbsp;<span class = "keyword">#include</span> <span class = "literal">"CircleWithPrivateDataFields.h"</span> 
+  4&nbsp;&nbsp;<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+  5&nbsp;&nbsp;
+  6&nbsp;&nbsp;<span class = "keyword">void</span> printCircle(Circle c)
+  7&nbsp;&nbsp;{
+  8&nbsp;&nbsp;  cout &lt;&lt; <span class = "literal">"The area of the circle of "</span>
+  9&nbsp;&nbsp;    &lt;&lt; c.getRadius() &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; c.getArea() &lt;&lt; endl;
+ 10&nbsp;&nbsp;}
+ 11&nbsp;&nbsp;
+ 12&nbsp;&nbsp;<span class = "keyword">int</span> main()
+ 13&nbsp;&nbsp;{
+ 14&nbsp;&nbsp;  Circle myCircle(<span class = "literal">5</span><span class = "literal">.</span><span class = "literal">0</span>);
+ 15&nbsp;&nbsp;  printCircle(myCircle); 
+ 16&nbsp;&nbsp;
+ 17&nbsp;&nbsp;  <span class = "keyword">return</span> <span class = "literal">0</span>;
+ 18&nbsp;&nbsp;}
+</pre>
+</body>
+</html>

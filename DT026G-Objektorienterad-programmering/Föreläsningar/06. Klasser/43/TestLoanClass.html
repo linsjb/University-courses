@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - TestLoanClass.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "TestLoanClassWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;iomanip&gt;
+<span class = "keyword">#include</span> <span class = "literal">"Loan.h"</span>
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  <span class = "comment">// Enter annual interest rate</span>
+  cout &lt;&lt; <span class = "literal">"Enter yearly interest rate, for example <span class = "literal">8</span><span class = "literal">.</span><span class = "literal">25</span>: "</span>;
+  <span class = "keyword">double</span> annualInterestRate;
+  cin &gt;&gt; annualInterestRate;
+
+  <span class = "comment">// Enter number of years</span>
+  cout &lt;&lt; <span class = "literal">"Enter number of years as an integer, for example <span class = "literal">5</span>: "</span>;
+  <span class = "keyword">int</span> numberOfYears;
+  cin &gt;&gt; numberOfYears;
+
+  <span class = "comment">// Enter loan amount</span>
+  cout &lt;&lt; <span class = "literal">"Enter loan amount, for example <span class = "literal">120000</span><span class = "literal">.</span><span class = "literal">95</span>: "</span>;
+  <span class = "keyword">double</span> loanAmount;
+  cin &gt;&gt; loanAmount;
+
+  <span class = "comment">// Create Loan object</span>
+  Loan loan(annualInterestRate, numberOfYears, loanAmount);
+
+  <span class = "comment">// Display results</span>
+  cout &lt;&lt; fixed &lt;&lt; setprecision(<span class = "literal">2</span>); 
+  cout &lt;&lt; <span class = "literal">"The monthly payment is "</span> 
+    &lt;&lt; loan.getMonthlyPayment() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"The total payment is "</span> &lt;&lt; loan.getTotalPayment() &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

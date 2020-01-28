@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - BinaryIntInput.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "BinaryIntInputWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;fstream&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  fstream binaryio(<span class = "literal">"temp.dat"</span>, ios::in | ios::binary);
+  <span class = "keyword">int</span> value;
+  binaryio.read(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;(&value), <span class = "keyword">sizeof</span>(value));
+  cout &lt;&lt; value &lt;&lt; endl;
+  binaryio.close();
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

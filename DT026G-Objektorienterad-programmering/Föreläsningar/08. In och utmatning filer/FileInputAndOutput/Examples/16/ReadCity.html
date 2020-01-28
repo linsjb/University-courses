@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - ReadCity.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "ReadCityWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;fstream&gt;
+<span class = "keyword">#include</span> &lt;string&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  <span class = "comment">// Open a file</span>
+  ifstream input(<span class = "literal">"state.txt"</span>);
+
+  <span class = "keyword">if</span> (input.fail())
+  {
+    cout &lt;&lt; <span class = "literal">"File does not exist"</span> &lt;&lt; endl;
+    cout &lt;&lt; <span class = "literal">"Exit program"</span> &lt;&lt; endl;
+    <span class = "keyword">return</span> <span class = "literal">0</span>;
+  }
+
+  <span class = "comment">// Read data</span>
+  string city;
+
+  <span class = "keyword">while</span> (!input.eof()) <span class = "comment">// Continue if not end of file</span>
+  {
+    getline(input, city, <span class = "literal">'#'</span>);
+    cout &lt;&lt; city &lt;&lt; endl;
+  }
+
+  input.close();
+
+  cout &lt;&lt; <span class = "literal">"Done"</span> &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

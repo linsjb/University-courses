@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - TextFileInput.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "TextFileInputWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;fstream&gt;
+<span class = "keyword">#include</span> &lt;string&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  ifstream input(<span class = "literal">"scores.txt"</span>);
+
+  <span class = "comment">// Read data</span>
+  string firstName;
+  <span class = "keyword">char</span> mi;
+  string lastName;
+  <span class = "keyword">int</span> score;
+  input &gt;&gt; firstName &gt;&gt; mi &gt;&gt; lastName &gt;&gt; score;
+  cout &lt;&lt; firstName &lt;&lt; <span class = "literal">" "</span> &lt;&lt; mi &lt;&lt; <span class = "literal">" "</span> &lt;&lt; lastName &lt;&lt; <span class = "literal">" "</span>
+    &lt;&lt; score &lt;&lt; endl;
+
+  input &gt;&gt; firstName &gt;&gt; mi &gt;&gt; lastName &gt;&gt; score;
+  cout &lt;&lt; firstName &lt;&lt; <span class = "literal">" "</span> &lt;&lt; mi &lt;&lt; <span class = "literal">" "</span> &lt;&lt; lastName &lt;&lt; <span class = "literal">" "</span>
+    &lt;&lt; score &lt;&lt; endl;
+
+  input.close();
+
+  cout &lt;&lt; <span class = "literal">"Done"</span> &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

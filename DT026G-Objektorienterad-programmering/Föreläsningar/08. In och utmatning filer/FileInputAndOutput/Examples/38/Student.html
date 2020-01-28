@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - Student.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "StudentWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> <span class = "literal">"Student.h"</span>
+<span class = "keyword">#include</span> &lt;cstring&gt;
+
+<span class = "comment">// Construct a default student</span>
+Student::Student()
+{
+}
+
+<span class = "comment">// Construct a Student object with specified data</span>
+Student::Student(<span class = "keyword">const</span> string& firstName, <span class = "keyword">char</span> mi, 
+  <span class = "keyword">const</span> string& lastName, <span class = "keyword">int</span> score)
+{
+  setFirstName(firstName);
+  setMi(mi);
+  setLastName(lastName);
+  setScore(score);
+}
+
+<span class = "keyword">void</span> Student::setFirstName(<span class = "keyword">const</span> string& s)
+{
+  strcpy(firstName, s.c_str());
+}
+
+<span class = "keyword">void</span> Student::setMi(<span class = "keyword">char</span> mi)
+{
+  <span class = "keyword">this</span>-&gt;mi = mi;
+}
+
+<span class = "keyword">void</span> Student::setLastName(<span class = "keyword">const</span> string& s)
+{
+   strcpy(lastName, s.c_str());
+}
+
+<span class = "keyword">void</span> Student::setScore(<span class = "keyword">int</span> score)
+{
+  <span class = "keyword">this</span>-&gt;score = score;
+}
+
+string Student::getFirstName() <span class = "keyword">const</span>
+{
+  <span class = "keyword">return</span> string(firstName);
+}
+
+<span class = "keyword">char</span> Student::getMi() <span class = "keyword">const</span>
+{
+  <span class = "keyword">return</span> mi;
+}
+
+string Student::getLastName() <span class = "keyword">const</span>
+{
+  <span class = "keyword">return</span> string(lastName);
+}
+
+<span class = "keyword">int</span> Student::getScore() <span class = "keyword">const</span>
+{
+  <span class = "keyword">return</span> score;
+}
+</pre>
+</body>
+</html>

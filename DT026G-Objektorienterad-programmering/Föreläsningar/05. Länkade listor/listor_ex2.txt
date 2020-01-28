@@ -1,0 +1,143 @@
+#include <iostream>
+using namespace std; 	 
+
+struct Node 
+{
+   int data;
+   Node* next;
+                
+   Node(int i=0, Node* link=NULL) 
+   : data(i), next(link) {}
+};
+typedef Node* NodeP;
+
+void Display(NodeP);
+void Prepend(NodeP &, int);
+void Append(NodeP , int);
+void Invert(NodeP &);
+void DeleteFirst(NodeP &);
+void DeleteInOrder(NodeP &, int);
+void Free(NodeP &);
+
+int main(void)
+{
+	NodeP list = NULL;
+	
+	   // initialization
+	
+	list = new Node(2);
+	list = new Node(4,list);
+	list = new Node(10, new Node(8, new Node(6,list)));
+	Display(list);
+
+	   // insert at front
+	
+	cout << "insert" << endl;
+	Prepend(list, 12);
+	Display(list);
+	
+	   // append
+	
+	cout << "append" << endl;
+	Append(list, -2);
+	Display(list);
+	
+	   // invert
+	
+	cout << "invert" << endl;
+	Invert(list);
+	Display(list);
+	
+      // delete first
+	
+	//DeleteFirst(list);
+	//Display(list);
+	
+	   // delete at
+	
+	//cout << "delete 12" << endl;
+	//DeleteAt(list, 12);
+	//Display(list);
+	
+	
+	   // delete all
+	
+	//cout << "delete all" << endl;
+	//Free(list);
+	//Display(list);
+	
+	return 0;
+}
+
+void Display(NodeP head)
+{
+	while(head != NULL)
+	{
+		cout << head->data << endl;
+		head = head->next;
+	}
+}
+
+void Prepend(NodeP &head, int v)
+{
+	head = new Node(v, head);
+}
+
+void Append(NodeP head, int v)
+{
+	while(head->next != NULL)  head = head->next;
+	
+	head->next = new Node(v);
+}
+
+
+void Invert(NodeP &head)
+{
+	NodeP new_node, tmp = NULL;
+	
+	while(head != NULL)
+	{
+		new_node = head;
+		head = head->next;
+		new_node->next = tmp;
+		tmp = new_node;
+	}
+	head = new_node;
+}
+
+void DeleteFirst(NodeP &head)
+{
+	NodeP tmp = head;
+	head=head->next;
+	
+	delete tmp;
+}
+
+void DeleteInOrder(NodeP &head, int key)
+{
+	if(head->data == key) 
+		DeleteFirst(head);
+	else
+	{
+		NodeP tmp = head;
+		while(tmp->next != NULL && tmp->next->data != key) 
+			tmp = tmp->next;
+		
+		NodeP del = tmp->next;
+		tmp->next = tmp->next->next;
+		delete del;	
+	}
+
+}
+
+void Free(NodeP &head)
+{
+NodeP tmp = head;
+
+	while(head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		delete tmp;
+	}
+}

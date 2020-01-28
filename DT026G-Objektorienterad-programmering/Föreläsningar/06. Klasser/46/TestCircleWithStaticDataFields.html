@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - TestCircleWithStaticDataFields.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "TestCircleWithStaticDataFieldsWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> <span class = "literal">"CircleWithStaticDataFields.h"</span>
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  cout &lt;&lt; <span class = "literal">"Number of circle objects created: "</span>
+    &lt;&lt; Circle::getNumberOfObjects() &lt;&lt; endl;
+
+  Circle circle1;
+  cout &lt;&lt; <span class = "literal">"The area of the circle of radius "</span>
+    &lt;&lt; circle1.getRadius() &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; circle1.getArea() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"Number of circle objects created: "</span>
+    &lt;&lt; Circle::getNumberOfObjects() &lt;&lt; endl;
+
+  Circle circle2(<span class = "literal">5</span><span class = "literal">.</span><span class = "literal">0</span>);
+  cout &lt;&lt; <span class = "literal">"The area of the circle of radius "</span>
+    &lt;&lt; circle2.getRadius() &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; circle2.getArea() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"Number of circle objects created: "</span>
+      &lt;&lt; Circle::getNumberOfObjects() &lt;&lt; endl;
+
+  circle1.setRadius(<span class = "literal">3</span><span class = "literal">.</span><span class = "literal">3</span>);
+  cout &lt;&lt; <span class = "literal">"The area of the circle of radius "</span>
+    &lt;&lt; circle1.getRadius() &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; circle1.getArea() &lt;&lt; endl;
+
+  cout &lt;&lt; <span class = "literal">"circle1.getNumberOfObjects() returns "</span>
+    &lt;&lt; circle1.getNumberOfObjects() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"circle2.getNumberOfObjects() returns "</span>
+    &lt;&lt; circle2.getNumberOfObjects() &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

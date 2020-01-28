@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - CharacterFunctions.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "CharacterFunctionsWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;cctype&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  cout &lt;&lt; <span class = "literal">"Enter a character: "</span>;
+  <span class = "keyword">char</span> ch;
+  cin &gt;&gt; ch;
+
+  cout &lt;&lt; <span class = "literal">"You entered "</span> &lt;&lt; ch &lt;&lt; endl;
+
+  <span class = "keyword">if</span> (islower(ch)) 
+  {
+    cout &lt;&lt; <span class = "literal">"It is a lowercase letter "</span> &lt;&lt; endl;
+    cout &lt;&lt; <span class = "literal">"Its equivalent uppercase letter is "</span> &lt;&lt;
+      <span class = "keyword">static_cast</span>&lt;<span class = "keyword">char</span>&gt;(toupper(ch)) &lt;&lt; endl;
+  }
+  <span class = "keyword">else</span> <span class = "keyword">if</span> (isupper(ch)) 
+  {
+    cout &lt;&lt; <span class = "literal">"It is an uppercase letter "</span> &lt;&lt; endl;
+    cout &lt;&lt; <span class = "literal">"Its equivalent lowercase letter is "</span> &lt;&lt;
+      <span class = "keyword">static_cast</span>&lt;<span class = "keyword">char</span>&gt;(tolower(ch)) &lt;&lt; endl;
+  }
+  <span class = "keyword">else</span> <span class = "keyword">if</span> (isdigit(ch)) 
+  {
+    cout &lt;&lt; <span class = "literal">"It is a digit character "</span> &lt;&lt; endl;
+  }
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>
