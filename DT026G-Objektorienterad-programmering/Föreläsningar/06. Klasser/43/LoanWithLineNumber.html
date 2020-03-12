@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - Loan.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "Loan.html" method = "get">
+<input type = "submit" value = "Show Code Without Line Numbers" />
+</form>
+<pre>
+  1&nbsp;&nbsp;<span class = "keyword">#include</span> <span class = "literal">"Loan.h"</span>
+  2&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;cmath&gt;
+  3&nbsp;&nbsp;<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+  4&nbsp;&nbsp;
+  5&nbsp;&nbsp;Loan::Loan()
+  6&nbsp;&nbsp;{
+  7&nbsp;&nbsp;  annualInterestRate = <span class = "literal">9</span><span class = "literal">.</span><span class = "literal">5</span>;
+  8&nbsp;&nbsp;  numberOfYears = <span class = "literal">30</span>;
+  9&nbsp;&nbsp;  loanAmount = <span class = "literal">100000</span>;
+ 10&nbsp;&nbsp;}
+ 11&nbsp;&nbsp;
+ 12&nbsp;&nbsp;Loan::Loan(<span class = "keyword">double</span> rate, <span class = "keyword">int</span> years, <span class = "keyword">double</span> amount)
+ 13&nbsp;&nbsp;{
+ 14&nbsp;&nbsp;  annualInterestRate = rate;
+ 15&nbsp;&nbsp;  numberOfYears = years;
+ 16&nbsp;&nbsp;  loanAmount = amount;
+ 17&nbsp;&nbsp;}
+ 18&nbsp;&nbsp;
+ 19&nbsp;&nbsp;<span class = "keyword">double</span> Loan::getAnnualInterestRate()
+ 20&nbsp;&nbsp;{
+ 21&nbsp;&nbsp;  <span class = "keyword">return</span> annualInterestRate;
+ 22&nbsp;&nbsp;}
+ 23&nbsp;&nbsp;
+ 24&nbsp;&nbsp;<span class = "keyword">int</span> Loan::getNumberOfYears()
+ 25&nbsp;&nbsp;{
+ 26&nbsp;&nbsp;  <span class = "keyword">return</span> numberOfYears;
+ 27&nbsp;&nbsp;}
+ 28&nbsp;&nbsp;
+ 29&nbsp;&nbsp;<span class = "keyword">double</span> Loan::getLoanAmount()
+ 30&nbsp;&nbsp;{
+ 31&nbsp;&nbsp;  <span class = "keyword">return</span> loanAmount;
+ 32&nbsp;&nbsp;}
+ 33&nbsp;&nbsp;
+ 34&nbsp;&nbsp;<span class = "keyword">void</span> Loan::setAnnualInterestRate(<span class = "keyword">double</span> rate)
+ 35&nbsp;&nbsp;{
+ 36&nbsp;&nbsp;  annualInterestRate = rate;
+ 37&nbsp;&nbsp;}
+ 38&nbsp;&nbsp;
+ 39&nbsp;&nbsp;<span class = "keyword">void</span> Loan::setNumberOfYears(<span class = "keyword">int</span> years)
+ 40&nbsp;&nbsp;{
+ 41&nbsp;&nbsp;  numberOfYears = years;
+ 42&nbsp;&nbsp;}
+ 43&nbsp;&nbsp;
+ 44&nbsp;&nbsp;<span class = "keyword">void</span> Loan::setLoanAmount(<span class = "keyword">double</span> amount)
+ 45&nbsp;&nbsp;{
+ 46&nbsp;&nbsp;  loanAmount = amount;
+ 47&nbsp;&nbsp;}
+ 48&nbsp;&nbsp;
+ 49&nbsp;&nbsp;<span class = "keyword">double</span> Loan::getMonthlyPayment()
+ 50&nbsp;&nbsp;{
+ 51&nbsp;&nbsp;  <span class = "keyword">double</span> monthlyInterestRate = annualInterestRate / <span class = "literal">1200</span>;
+ 52&nbsp;&nbsp;  <span class = "keyword">return</span> loanAmount * monthlyInterestRate / (<span class = "literal">1</span> -
+ 53&nbsp;&nbsp;    (pow(<span class = "literal">1</span> / (<span class = "literal">1</span> + monthlyInterestRate), numberOfYears * <span class = "literal">12</span>)));
+ 54&nbsp;&nbsp;}
+ 55&nbsp;&nbsp;
+ 56&nbsp;&nbsp;<span class = "keyword">double</span> Loan::getTotalPayment()
+ 57&nbsp;&nbsp;{
+ 58&nbsp;&nbsp;  <span class = "keyword">return</span> getMonthlyPayment() * numberOfYears * <span class = "literal">12</span>;
+ 59&nbsp;&nbsp;}
+</pre>
+</body>
+</html>

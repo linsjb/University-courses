@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - BinaryObjectIO.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "BinaryObjectIOWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;fstream&gt;
+<span class = "keyword">#include</span> <span class = "literal">"Student.h"</span>
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">void</span> displayStudent(<span class = "keyword">const</span> Student& student)
+{
+  cout &lt;&lt; student.getFirstName() &lt;&lt; <span class = "literal">" "</span>;
+  cout &lt;&lt; student.getMi() &lt;&lt; <span class = "literal">" "</span>;
+  cout &lt;&lt; student.getLastName() &lt;&lt; <span class = "literal">" "</span>;
+  cout &lt;&lt; student.getScore() &lt;&lt; endl;
+}
+
+<span class = "keyword">int</span> main()
+{
+  fstream binaryio; <span class = "comment">// Create stream object</span>
+  binaryio.open(<span class = "literal">"student.dat"</span>, ios::out | ios::binary);
+
+  Student student1(<span class = "literal">"John"</span>, <span class = "literal">'T'</span>, <span class = "literal">"Smith"</span>, <span class = "literal">90</span>);
+  Student student2(<span class = "literal">"Eric"</span>, <span class = "literal">'K'</span>, <span class = "literal">"Jones"</span>, <span class = "literal">85</span>);
+  Student student3(<span class = "literal">"Susan"</span>, <span class = "literal">'T'</span>, <span class = "literal">"King"</span>, <span class = "literal">67</span>);
+  Student student4(<span class = "literal">"Kim"</span>, <span class = "literal">'K'</span>, <span class = "literal">"Peterson"</span>, <span class = "literal">95</span>);
+
+  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+    (&student1), <span class = "keyword">sizeof</span>(Student));
+  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+    (&student2), <span class = "keyword">sizeof</span>(Student));
+  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+    (&student3), <span class = "keyword">sizeof</span>(Student));
+  binaryio.write(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+    (&student4), <span class = "keyword">sizeof</span>(Student));
+
+  binaryio.close();
+ 
+  <span class = "comment">// Read student back from the file</span>
+  binaryio.open(<span class = "literal">"student.dat"</span>, ios::in | ios::binary);
+
+  Student studentNew;
+
+  binaryio.read(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+    (&studentNew), <span class = "keyword">sizeof</span>(Student));
+
+  displayStudent(studentNew);
+   
+  binaryio.read(<span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">char</span>*&gt;
+    (&studentNew), <span class = "keyword">sizeof</span>(Student));
+
+  displayStudent(studentNew);
+
+  binaryio.close();
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - DisplayTime.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "DisplayTimeWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  <span class = "comment">// Prompt the user for input</span>
+  <span class = "keyword">int</span> seconds;
+  cout &lt;&lt; <span class = "literal">"Enter an integer for seconds: "</span>;
+  cin &gt;&gt; seconds;
+  <span class = "keyword">int</span> minutes = seconds / <span class = "literal">60</span>;
+  <span class = "keyword">int</span> remainingSeconds = seconds % <span class = "literal">60</span>;
+  cout &lt;&lt; seconds &lt;&lt; <span class = "literal">" seconds is "</span> &lt;&lt; minutes &lt;&lt;
+    <span class = "literal">" minutes and "</span> &lt;&lt; remainingSeconds &lt;&lt; <span class = "literal">" seconds "</span> &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

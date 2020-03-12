@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - DisplayRandomCharacter.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "DisplayRandomCharacterWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;cstdlib&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+	cout &lt;&lt; <span class = "literal">"Enter a starting character: "</span>;
+	<span class = "keyword">char</span> startChar;
+	cin &gt;&gt; startChar;
+
+	cout &lt;&lt; <span class = "literal">"Enter an ending character: "</span>;
+	<span class = "keyword">char</span> endChar;
+	cin &gt;&gt; endChar;
+
+	<span class = "comment">// Get a random character</span>
+	<span class = "keyword">char</span> randomChar = <span class = "keyword">static_cast</span>&lt;<span class = "keyword">char</span>&gt;(startChar + rand() % 
+		(endChar - startChar + <span class = "literal">1</span>));
+
+  cout &lt;&lt; <span class = "literal">"The random character between "</span> &lt;&lt; startChar &lt;&lt; <span class = "literal">" and "</span> 
+		&lt;&lt; endChar &lt;&lt; <span class = "literal">" is "</span> &lt;&lt; randomChar &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

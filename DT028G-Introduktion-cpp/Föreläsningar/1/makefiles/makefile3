@@ -1,0 +1,16 @@
+%.o : %.cpp		# % is wildcard meaning for every .o use .cpp file
+	$(C) -c -Wall $<
+C = g++
+OBJS = test.o
+
+test : test.o
+	$(C) -o test $(OBJS)
+
+clean :
+	rm $(OBJS)
+
+cleanall :
+	rm $(OBJS) test
+
+run : 
+	./test

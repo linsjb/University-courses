@@ -1,0 +1,51 @@
+// out: ./style.css
+
+@import "materialColor.less";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  background-color: @clr-blue-300;
+  height: 60px;
+
+  h2 {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: @clr-grey-100;
+    letter-spacing: 2px;
+  }
+
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  background-color: @clr-grey-300;
+  padding: 30px;
+}
+
+.post {
+  background-color: @clr-grey-200;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.newPost {
+  margin-top: 40px;
+  input[name=nameInput] {
+    width: 30%;
+    margin-bottom: 15px;
+    height: 25px;
+  }
+
+  textarea {
+    width: 100%;
+  }
+}

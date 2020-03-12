@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - CircleWithDestructor.h</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "CircleWithDestructor.htm" method = "get">
+<input type = "submit" value = "Show Code Without Line Numbers" />
+</form>
+<pre>
+  1&nbsp;&nbsp;<span class = "keyword">#ifndef</span> CIRCLE_H
+  2&nbsp;&nbsp;<span class = "keyword">#define</span> CIRCLE_H
+  3&nbsp;&nbsp;
+  4&nbsp;&nbsp;<span class = "keyword">class</span> Circle
+  5&nbsp;&nbsp;{
+  6&nbsp;&nbsp;<span class = "keyword">public</span>:
+  7&nbsp;&nbsp;  Circle();
+  8&nbsp;&nbsp;  Circle(<span class = "keyword">double</span>);
+  9&nbsp;&nbsp;  ~Circle(); <span class = "comment">// Destructor</span>
+ 10&nbsp;&nbsp;  <span class = "keyword">double</span> getArea() <span class = "keyword">const</span>;
+ 11&nbsp;&nbsp;  <span class = "keyword">double</span> getRadius() <span class = "keyword">const</span>;
+ 12&nbsp;&nbsp;  <span class = "keyword">void</span> setRadius(<span class = "keyword">double</span>);
+ 13&nbsp;&nbsp;  <span class = "keyword">static</span> <span class = "keyword">int</span> getNumberOfObjects();
+ 14&nbsp;&nbsp;
+ 15&nbsp;&nbsp;<span class = "keyword">private</span>:
+ 16&nbsp;&nbsp;  <span class = "keyword">double</span> radius;
+ 17&nbsp;&nbsp;  <span class = "keyword">static</span> <span class = "keyword">int</span> numberOfObjects;
+ 18&nbsp;&nbsp;};
+ 19&nbsp;&nbsp;
+ 20&nbsp;&nbsp;<span class = "keyword">#endif</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - ShowStreamState.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "ShowStreamStateWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;fstream&gt;
+<span class = "keyword">#include</span> &lt;string&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">void</span> showState(<span class = "keyword">const</span> fstream&);
+
+<span class = "keyword">int</span> main()
+{
+  fstream inout;
+
+  <span class = "comment">// Create an output file</span>
+  inout.open(<span class = "literal">"temp.txt"</span>, ios::out);
+  inout &lt;&lt; <span class = "literal">"Dallas"</span>;
+  cout &lt;&lt; <span class = "literal">"Normal operation (no errors)"</span> &lt;&lt; endl;
+  showState(inout);
+  inout.close();
+
+  <span class = "comment">// Create an input file</span>
+  inout.open(<span class = "literal">"temp.txt"</span>, ios::in);
+
+  <span class = "comment">// Read a string</span>
+  string city;
+  inout &gt;&gt; city;
+  cout &lt;&lt; <span class = "literal">"End of file (no errors)"</span> &lt;&lt; endl;
+  showState(inout);
+
+  inout.close();
+
+  <span class = "comment">// Attempt to read after file closed</span>
+  inout &gt;&gt; city;
+  cout &lt;&lt; <span class = "literal">"Bad operation (errors)"</span> &lt;&lt; endl;
+  showState(inout);
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+
+<span class = "keyword">void</span> showState(<span class = "keyword">const</span> fstream& stream)
+{
+  cout &lt;&lt; <span class = "literal">"Stream status: "</span> &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"  eof(): "</span> &lt;&lt; stream.eof() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"  fail(): "</span> &lt;&lt; stream.fail() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"  bad(): "</span> &lt;&lt; stream.bad() &lt;&lt; endl;
+  cout &lt;&lt; <span class = "literal">"  good(): "</span> &lt;&lt; stream.good() &lt;&lt; endl;
+}
+</pre>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - SalesTax.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "SalesTaxWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  <span class = "comment">// Enter purchase amount</span>
+  <span class = "keyword">double</span> purchaseAmount;
+  cout &lt;&lt; <span class = "literal">"Enter purchase amount: "</span>;
+  cin &gt;&gt; purchaseAmount;
+
+  <span class = "keyword">double</span> tax = purchaseAmount * <span class = "literal">0</span><span class = "literal">.</span><span class = "literal">06</span>;
+  cout &lt;&lt; <span class = "literal">"Sales tax is "</span> &lt;&lt; <span class = "keyword">static_cast</span>&lt;<span class = "keyword">int</span>&gt;(tax * <span class = "literal">100</span>) / <span class = "literal">100</span><span class = "literal">.</span><span class = "literal">0</span>;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

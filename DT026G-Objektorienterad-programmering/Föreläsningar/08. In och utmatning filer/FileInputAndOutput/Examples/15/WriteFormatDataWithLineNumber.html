@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 2E - WriteFormatData.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "WriteFormatData.html" method = "get">
+<input type = "submit" value = "Show Code Without Line Numbers" />
+</form>
+<pre>
+  1&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;iostream&gt;
+  2&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;iomanip&gt;
+  3&nbsp;&nbsp;<span class = "keyword">#include</span> &lt;fstream&gt;
+  4&nbsp;&nbsp;<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+  5&nbsp;&nbsp;
+  6&nbsp;&nbsp;<span class = "keyword">int</span> main()
+  7&nbsp;&nbsp;{
+  8&nbsp;&nbsp;  ofstream output;
+  9&nbsp;&nbsp;
+ 10&nbsp;&nbsp;  <span class = "comment">// Create a file</span>
+ 11&nbsp;&nbsp;  output.open(<span class = "literal">"formattedscores.txt"</span>);
+ 12&nbsp;&nbsp;
+ 13&nbsp;&nbsp;  <span class = "comment">// Write two lines</span>
+ 14&nbsp;&nbsp;  <span class = "comment">// Write two lines</span>
+ 15&nbsp;&nbsp;  output &lt;&lt; setw(<span class = "literal">6</span>) &lt;&lt; <span class = "literal">"John"</span> &lt;&lt; setw(<span class = "literal">2</span>) &lt;&lt; <span class = "literal">"T"</span> &lt;&lt; setw(<span class = "literal">6</span>) &lt;&lt; <span class = "literal">"Smith"</span>
+ 16&nbsp;&nbsp;    &lt;&lt; <span class = "literal">" "</span> &lt;&lt; setw(<span class = "literal">4</span>) &lt;&lt; <span class = "literal">90</span> &lt;&lt; endl;
+ 17&nbsp;&nbsp;  output &lt;&lt; setw(<span class = "literal">6</span>) &lt;&lt; <span class = "literal">"Eric"</span> &lt;&lt; setw(<span class = "literal">2</span>) &lt;&lt; <span class = "literal">"K"</span> &lt;&lt; setw(<span class = "literal">6</span>) &lt;&lt; <span class = "literal">"Jones"</span>
+ 18&nbsp;&nbsp;&lt;&lt; <span class = "literal">" "</span> &lt;&lt; setw(<span class = "literal">4</span>) &lt;&lt; <span class = "literal">85</span>;
+ 19&nbsp;&nbsp;
+ 20&nbsp;&nbsp;  output.close();
+ 21&nbsp;&nbsp;
+ 22&nbsp;&nbsp;  cout &lt;&lt; <span class = "literal">"Done"</span> &lt;&lt; endl;
+ 23&nbsp;&nbsp;  <span class = "keyword">return</span> <span class = "literal">0</span>;
+ 24&nbsp;&nbsp;}
+</pre>
+</body>
+</html>

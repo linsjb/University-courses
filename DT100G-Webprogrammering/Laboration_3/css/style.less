@@ -1,0 +1,75 @@
+// out: ./style.css
+
+@import "materialColor.less";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  background-color: @clr-blue-300;
+  height: 60px;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+  }
+
+  nav {
+    float: right;
+    position: relative;
+    top: 5px;
+    right: 25px;
+
+    ul {
+
+      li {
+        display: inline-block;
+        a {
+          padding: 10px 10px;
+          text-decoration: none;
+          color: @clr-grey-100;
+
+          &:hover {
+            color: @clr-orange-500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  width: 80%;
+  margin: 0 auto;
+  background-color: @clr-grey-300;
+  padding: 30px;
+}
+
+.login {
+  width: 40%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: @clr-grey-400;
+  text-align: center;
+
+  h2 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    color: @clr-red-400;
+  }
+}

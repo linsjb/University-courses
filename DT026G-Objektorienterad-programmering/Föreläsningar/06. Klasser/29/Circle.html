@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - Circle.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "CircleWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> <span class = "literal">"Circle.h"</span>
+
+<span class = "comment">// Construct a default circle object</span>
+Circle::Circle()
+{
+  radius = <span class = "literal">1</span>;
+}
+
+<span class = "comment">// Construct a circle object</span>
+Circle::Circle(<span class = "keyword">double</span> newRadius)
+{
+  radius = newRadius;
+}
+
+<span class = "comment">// Return the area of this circle</span>
+<span class = "keyword">double</span> Circle::getArea()
+{
+  <span class = "keyword">return</span> radius * radius * <span class = "literal">3</span><span class = "literal">.</span><span class = "literal">14159</span>;
+}
+
+<span class = "keyword">double</span> Circle::getRadius()
+{
+  <span class = "keyword">return</span> radius;
+}
+
+<span class = "keyword">void</span> Circle::setRadius(<span class = "keyword">double</span> newRadius)
+{
+  <span class = "keyword">if</span> (radius &gt;= <span class = "literal">0</span>)
+    radius = newRadius;
+  <span class = "keyword">else</span>
+    radius = <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>

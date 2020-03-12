@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Intro to Programming with C++, 3E - ReinterpretCastingDemo.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style type = "text/css">
+body {font-family: "Courier New", sans-serif; font-size: 100%; color: black}
+.keyword {color: #000080; font-weight: bold}
+.comment {color: gray}
+.literal {font-weight: bold; color: #3366FF}
+</style>
+</head>
+<body>
+<form action = "ReinterpretCastingDemoWithLineNumber.html" method = "get">
+<input type = "submit" value = "Show Code With Line Numbers" />
+</form>
+<pre>
+<span class = "keyword">#include</span> &lt;iostream&gt;
+<span class = "keyword">#include</span> &lt;iomanip&gt;
+<span class = "keyword">using</span> <span class = "keyword">namespace</span> std;
+
+<span class = "keyword">int</span> main()
+{
+  <span class = "keyword">float</span> floatValue = <span class = "literal">19</span><span class = "literal">.</span><span class = "literal">5</span>;
+  <span class = "keyword">int</span>* p = <span class = "keyword">reinterpret_cast</span>&lt;<span class = "keyword">int</span>*&gt;(&floatValue);
+  cout &lt;&lt; <span class = "literal">"int value "</span> &lt;&lt; *p &lt;&lt; <span class = "literal">" and float value "</span>  
+    &lt;&lt; floatValue &lt;&lt; <span class = "literal">"\nhave the same binary representation "</span>
+    &lt;&lt; hex &lt;&lt; *p &lt;&lt; endl;
+
+  <span class = "keyword">return</span> <span class = "literal">0</span>;
+}
+</pre>
+</body>
+</html>
