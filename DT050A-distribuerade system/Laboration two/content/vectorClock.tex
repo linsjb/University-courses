@@ -1,0 +1,18 @@
+\section{Vector clock}
+The vector clock for this second lab is of the type HashMap. The HashMap is provided with a key as a String and a value as a Integer.
+The key is the random username that gets generated when a new client is created and the value is the value of the local clock.
+
+\subsection{Initalization}
+Every user has their own clock that is initalized with the username and the value set to zero when the user is created (in the constructor). As  \cref{code:usrCtor} below shows.
+In this way it's easy to keep track of which clock to change when a message is sent.
+
+\begin{listing}
+\caption{User constructor}
+\label{code:usrCtor}
+\begin{minted}[frame=lines]{java}
+public User() {
+    this.vectorClock = new VectorClock();
+    vectorClock.put(this.username, 0);
+}
+\end{minted}
+\end{listing}

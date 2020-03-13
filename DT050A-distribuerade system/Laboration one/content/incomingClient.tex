@@ -1,0 +1,35 @@
+\section{Incoming client}
+When a new client (let's call it client B) is joining the chat B will first send a broadcast to all existing clients. In this case the existing client's will now know that B has joined that chat. B on the other hand does not know about the other clients.
+
+The broadcast to the other clients will now trigger their own broadcast to every client to tell them (even if they already know) that they there. Also client B will get acknowledgement about the other clients. The first broadcast from client B will not do anything else than trigger another broadcast. \cref{code:onIncCli} shows the "trigger" method that the MessageListener class will fire when a new client is connecting. 
+
+\begin{listing}
+\caption{Incoming client trigger method}
+\label{code:onIncCli}
+\begin{minted}[breaklines, frame=lines]{java}
+public void onIncomingClient() {
+    grpComm.sendBroadcast("clientConnectionBroadcast", user.getUsername());
+}
+\end{minted}
+\end{listing}
+
+
+When the client sends out their broadcast the method \textit{onClientConnectBroadcast} method that's presented in \cref{code:cliConnBroad} will fire. This method is triggered in every client multiple times (once for every broadcast). The method will first reset the clients windows in the chat client and then check if the clients array contains the current incoming client. If it doesn't the client will get added to the array. The array will then get looped-out to the clients window.
+
+\begin{listing}[H]
+\caption{Client broadcast method}
+\label{code:cliConnBroad}
+\begin{minted}[frame=lines, breaklines]{java}
+public void onClientConnectBroadcast(ClientConnectBroadcast ccb) {
+    clientsWindow.setText("");
+
+    if (!clients.contains(ccb.client)) {
+        clients.add(ccb.client);
+    }
+
+    for (int i = 0; i < clients.size(); i++) {
+        clientsWindow.setText(clientsWindow.getText() + "\n" + clients.get(i));
+    }
+}
+\end{minted}
+\end{listing}

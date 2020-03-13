@@ -1,0 +1,21 @@
+\section{OPC-UA} \label{opcua}
+\acrshort{opcua} is a industrial communication standard that's widely used today. The standard is not platform specific which means that is can be run from any kind of system.
+
+\acrshort{opcua} is a client and server bases system. The servers is the equipment talking with the various machines and production lines out in the industrial production plant. The client is talking directly to these servers and gives them instructions and extract data for further processing. \cite{opcuaAbb}
+
+
+
+\subsection{Communication} \label{opcuaCommunication}
+There are two different types of communication mappings in \acrshort{opcua}.
+XML and \textit{UA Native} mapping.
+The \textit{UA Native} mapping is using a network based binary protocol for communication and talking directly over TCP/IP. The mapping suits well in areas where the system has a limited resource of performance. \cite{adoptingOpcua, opcuaAbb}
+
+
+\subsection{Address space} \label{opcuaAddressSpace}
+\acrshort{opcua} is built with a object based approach. The server is creating these different objects that one or more clients can access through the \acrshort{opcua} service. This service is called the address space. The purpose of this address space is to standardize how the server present it's objects to the clients.
+The address space can contain of one or more objects (nodes) which in turn hold's different types of variables, methods and events. This is illustrated in \cref{fig:opcuaAddressSpace}. These three types is also refereed as objects. So it could be said that the namespace contain of nodes which hold objects. \cite{adoptingOpcua, opcuaAbb}
+
+\fig{t!}{\acrshort{opcua} address space}{opcuaAddressSpace}{1}{opcuaAddressSpaceModel.png}
+
+The client will either ask the server for a specific data or trigger the server to perform a method. This is all done with the help of the above mentioned objects in the address space.
+

@@ -1,0 +1,16 @@
+\section{Messages}
+\subsection{Message types}
+Since different broadcasts was needed for the lab, different classes based on the \textit{Message}-class has been created. So there is now five different message types. These are;
+
+\begin{itemize}
+    \item ChatMessage
+    \item ClientConnect
+    \item ClientConnectBroadcast
+    \item ClientDisconnect
+    \item ClientDisconnectBroadcast
+\end{itemize}
+
+Each of those classes is handling their own broadcast type, as their name explains.
+
+\subsection{Message handler}
+To be able to handle the different type of messages the method \textit{handleMessage} in the \textit{GroupCommunication}-class needed an update. The method will control what type of instance the ChatMessage that's being broadcasted is. The method will then create the right type of message and function call to the right listener.

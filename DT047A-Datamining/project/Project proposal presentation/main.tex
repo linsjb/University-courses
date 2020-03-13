@@ -1,0 +1,78 @@
+\documentclass{beamer}
+\usetheme{metropolis} 
+
+\input{settings/settings.tex}
+
+\newcommand{\notesPath}{./notes/}
+\graphicspath{{./attachments/figures/images/}}
+\newcommand{\tikzPath}{./attachments/figures/tikz/}
+\newcommand{\codePath}{./attachments/code/}
+\newcommand{\tablePath}{./attachments/tables/}
+
+% \showNotes
+
+\title{Project proposal}
+\date{\today}
+\author{Linus Sjöbro}
+\institute{Mid Sweden University}
+
+\begin{document}
+  \maketitle
+
+  \begin{notedFrame}{Method}{theProblem.tex}
+    \begin{itemize}
+      \item Compare supervised methods
+      \item Compare which method that gives the highest accuracy
+      \item Business objectives
+      \begin{itemize}
+        \item Help winery to decide what their alcoholic level should be for a good wine
+      \end{itemize}
+    \end{itemize}
+  \end{notedFrame}
+
+  \begin{frame}{Evaluation method}
+    \begin{itemize}
+      \item Hold out
+      \begin{itemize}
+        \item 20\% / 80\% ration between training set and test set
+      \end{itemize}
+      \item Confusion matrix
+      \begin{itemize}
+        \item Compare accuracy between the differrent models
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+
+  \begin{notedFrame}{Dataset}{dataset.tex}
+    \begin{itemize}
+      \item Red wine quality dataset
+      \item 11 inputs
+      \item 1 output
+      \item Output devided into two groups
+      \begin{itemize}
+        \item Good quality
+        \item Bad quality
+      \end{itemize}
+    \end{itemize}
+  \end{notedFrame}
+
+  \begin{notedFrame}{Models}{models.tex}
+    \begin{itemize}
+      \item KNN
+      \item Decision tree
+      \item visualizing wine quality
+      \begin{itemize}
+        \item The alcoholic level will decide the quality
+      \end{itemize}
+    \end{itemize}
+  \end{notedFrame}
+
+  \begin{notedFrame}{Measurements}{measurements.tex}
+    \begin{itemize}
+      \item Compare accuracy between the methods
+      \begin{itemize}
+        \item Made with the confusion matrix
+      \end{itemize}
+    \end{itemize}
+  \end{notedFrame}
+\end{document}

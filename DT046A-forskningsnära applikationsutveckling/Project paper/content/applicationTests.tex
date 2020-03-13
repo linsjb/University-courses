@@ -1,0 +1,21 @@
+\section{OPC-UA application tests} \label{appTests}
+
+\subsection{Server implementation} \label{appTestsServerImpl}
+To simulate a \acrshort{opcua} server a small program has been developed. The server creates a new object, the \textit{BaseObject}, in the address space. This \textit{BaseObject} holds the method for the load test (LT) and variables that being used during the test.
+
+Before the LT starts a timestamp, $TS_0$, is registered locally at the server.
+
+The LT then populate a \acrshort{opcua} variable with a random data sequence of integer numbers we call \textit{Data pool} (DP). The size of the DP and the number range of the random sequence is determined in the method call from the client. The DP is getting sorted after it's filled. When the sorting is done a new timestamp, $TS_1$, is registered. the two timestamps can now say how long both of these two operations took with help of the time delta $TS_1 - TS_0$. This time delta is inserted in another \acrshort{opcua} variable, \textit{Server process time} (SPT). \Cref{fig:loadTestSeq} presents a combined sequence chart over the function and variable calls performed in the LT.
+
+
+\subsection{Client implementation} \label{appTestsClientImpl}
+The client calls the LT on the server and measure the time it takes for the server to perform the task.
+A timestamp, $TC_0$, is being registered before the client calls the LT. When the LT is done the client gets the SPT and DP back from the server. When the client has retrieved both of these variable  a new timestamp, $TC_1$, gets registered. The time delta $TC_1 - TC_0$ is the client round trip time (CRTT).
+
+ \Cref{fig:loadTestSeq} presents a client and server combined sequence chart over the LT.
+
+\fig{h}{Client and server load test sequence}{loadTestSeq}{1}{loadTestSequence.png}
+
+
+\subsection{Data gathering} \label{appTestDataGath}
+As mentioned in \textit{\nameref{appTestsServerImpl}} the data to be tested is inserted by the client. To get a more accurate CRTT value the client is deploying the same method call $m$ times. A mean CRTT value is then taken from the $m$ values and being stored for later processing.

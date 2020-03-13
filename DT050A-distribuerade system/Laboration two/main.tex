@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+
+\input{settings/settings.tex}
+
+\title{Laboration two \\ \large{DT050A - Distributed systems}}
+\author{Linus Sjöbro and Diana Saveh}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Refactorization of code}
+ In the second lab some refactorization in the code from lab one has been done. Mostly to make the implementation of the vector clock easier.
+\bigskip
+
+The biggest changes is done in the \textit{GroupCommunication}-class. In the  \textit{sendBroadcast}-method we now instead provide the method call with the right broadcast message class. In lab one we provided a name where a switch made the decision of what kind of message that was provided. Now the method decides what kind of message it should sent based on the class that has been provided in the method call.
+
+\input{content/vectorClock.tex}
+\newpage
+\input{content/clockService.tex}
+
+\end{document}

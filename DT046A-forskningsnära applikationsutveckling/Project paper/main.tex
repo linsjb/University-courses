@@ -1,0 +1,42 @@
+% IEEE template based on the official IEEE tran template
+% Created by Linus Sjöbro
+% License: MIT
+%
+
+\documentclass[conference]{IEEEtran}
+\input{settings/settings.tex}
+
+\graphicspath{{./attachments/figures/images/}}
+\newcommand{\tikzPath}{./attachments/figures/pgf/}
+\newcommand{\codePath}{./attachments/code/}
+\newcommand{\tablePath}{./attachments/tables/}
+
+\title{Performance evaluation with usage of low powered devices with the OPC-UA and the IIoT}
+
+\author{%
+    \IEEEauthorblockN{Linus Sj\"{o}bro}
+    \IEEEauthorblockA{%
+        Mid Sweden University Sundsvall, Sweden \\
+        Email: lisj1502@student.miun.se
+    }
+}
+
+\makeglossaries
+\input{content/contentSupport/glossaries.tex}
+
+\begin{document}
+\maketitle
+
+% Content inputs
+\input{content/abstract.tex}
+\input{content/introduction.tex}
+\input{content/relatedWork.tex}
+
+\input{content/opcuaTheory.tex}
+\input{content/applicationInformation.tex}
+\input{content/applicationTests.tex}
+\input{content/results.tex}
+\input{content/conclusion.tex}
+\input{content/futureWork.tex}
+\printbibliography
+\end{document}

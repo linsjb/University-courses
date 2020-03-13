@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+
+\input{settings/settings.tex}
+
+\graphicspath{{./attachments/figures/images/}}
+\newcommand{\tikzPath}{./attachments/figures/tikz/}
+\newcommand{\codePath}{./attachments/code/}
+\newcommand{\tablePath}{./attachments/tables/}
+
+\title{Kostnads- och investeringskalkyler \\ \large{Hemuppgift 1 - IG001G}}
+\author{Linus Sjöbro}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Självkostnadskalkyl}
+\csvTable{H}{Självkostnadskalkyl}{}{selfCost/selfCostTable.csv}
+
+\section{ABC-kalkyl}
+\csvTable{H}{ABC - Parametrar}{}{abc/parametrar.csv}
+\csvTable{H}{ABC - Aktiviteter}{}{abc/aktiviteter.csv}
+% \csvTable{H}{ABC - Kostnadsdrivare}{}{abc/kostnadsdrivare.csv}
+\csvTable{H}{ABC - Kalkyl}{}{abc/kalkyl.csv}
+
+\section{Nuvärdeskalkyl}
+Kassaflöde från uppgift enligt \cref{tab:cashFlow} nedan.
+
+\csvTable{H}{Kassaflöde från uppgift}{cashFlow}{now/cashFlow.csv}
+
+\subsection{Uppgift A - WACC}
+WACC beräkning enligt \cref{eqa:wacc} nedan.
+
+\begin{equation} \label{eqa:wacc}
+p=\frac{K_e}{K}r_e + \frac{K_f}{K}(1-s)r_f
+\end{equation}
+
+\bigskip
+
+Variabelbeskrivning:
+\begin{enumerate}
+    \item $P$ = WACC
+    \item $K_e$ = Eget kapital
+    \item $K_f$ = Skulder
+    \item $K$ = Totalt kapital
+    \item $r_e$ = Avkastningskrav eget kapital
+    \item $r_f$ = Skuldränta
+    \item $s$ = Bolagets skattesats
+\end{enumerate}
+
+Kapitalkällor från uppgiften i \cref{tab:kapKa} nedan.
+
+%Kapitalkällor
+\csvTable{H}{Kapitalkällor}{kapKa}{now/cap.csv}
+
+
+WWAC beräkningar enligt \cref{tab:wwac} nedan.
+%WWAC
+\csvTable{H}{WWAC beräkningar}{wwac}{now/wwac.csv}
+
+\subsection{Uppgift B - Nunettovärdesmetoden}
+
+Nunettovärdesmetoden beräknas med hjälp av \cref{eqa:nnuv} nedan.
+
+\begin{equation} \label{eqa:nnuv}
+NNUV = \sum^n_{i=1}\frac{x_i}{(1+r)^n}-G
+\end{equation}
+
+\bigskip
+
+
+Variabelbeskrivning:
+\begin{enumerate}
+    \item $n$ = Ekonomisk livslängd
+    \item $r$ = Kalkylränta
+    \item $x_i$ = Kassaflöde
+    \item $G$ = Grundinvestering
+\end{enumerate}
+
+NV och NNUV enligt \cref{tab:nvCalc} nedan.
+
+%NV beräkningar
+\csvTable{H}{NV-beräkningar/produkt och år}{nvCalc}{now/nnuv.csv}
+
+
+Den bäst lämpade produkten är \textbf{Produkt E} då denna har högst värde. Sammanställt resultat i \cref{tab:nnuv} nedan. 
+
+
+\subsection{Uppgift C - Internränta}
+Internräntan beräknas precis som NNUV men istället för kalkylräntan används istället den framtagna internräntan för att få NV att komma så nära 0 som möjligt.
+
+
+%Beräkningar interränta
+\csvTable{H}{Beräkning av internränta/produkt}{intern}{now/intern.csv}
+
+
+Resultat återfinns i \cref{tab:nnuv}.
+\subsection{Uppgift D - Annuitetsfaktor}
+
+\csvTable{H}{Annuitetsberäkningar}{annu}{now/annu.csv}
+
+Resultat återfinns i \cref{tab:nnuv}.
+
+\subsection{Sammanställt resultat}
+Sammanställning av samtliga beräkningar med efterfrågat svar.
+
+NNUV beräknas enligt \cref{tab:nvCalc}.
+
+Internräntan beräknas enligt \cref{tab:intern}.
+
+Annuitetsvärde beräknas enligt \cref{tab:annu}.
+%nunettovärdesmetoden
+\csvTable{H}{Resultat för samtliga beräkningar förutom WWAC}{nnuv}{now/result.csv}
+
+
+
+
+
+\end{document}
