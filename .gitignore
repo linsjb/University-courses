@@ -10,3 +10,7 @@
 *.blg
 __latexindent_temp.tex
 _minted-main
+*.out
+*.nav
+*.snm
+*.toc
