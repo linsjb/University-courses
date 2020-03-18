@@ -6,10 +6,16 @@
     \note{\input{\notesPath#1}}
 }
 
-\newcommand{\fig}[3]{%
+\newcommand{\figNoCap}[2]{%
     \figure
-        \includegraphics[width=#1\textwidth]{#3}
-        \caption{#2}
+        \includegraphics[width=#1\textwidth]{#2}
+    \endfigure
+}
+
+\newcommand{\fig}[4]{%
+    \figure
+        \includegraphics[width=#1\textwidth]{#4}
+        \caption{#3}\label{#2}
     \endfigure
 }
 

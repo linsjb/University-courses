@@ -3,7 +3,7 @@
 
 \input{settings/settings.tex}
 
-\newcommand{\notesPath}{./content/notes/}
+\newcommand{\notesPath}{./notes/}
 \graphicspath{{./attachments/figures/images/}}
 \newcommand{\tikzPath}{./attachments/figures/tikz/}
 \newcommand{\codePath}{./attachments/code/}
@@ -11,11 +11,23 @@
 
 \showNotes
 
-\title{}
-\date{\today}
-\author{}
-% \institute{}
+\title{Wireless sensor network security, protocol and authentication}
+\date{2020-03-18}
+\author{Linus Sjöbro}
+\institute{Mid Sweden University}
 
 \begin{document}
   \maketitle
+
+  \begin{notedFrame}{Outline}{outline.tex}
+    \tableofcontents
+  \end{notedFrame}
+  
+  \input{content/introduction.tex}
+  \input{content/secProt.tex}
+  \input{content/pkc.tex}
+
+  \begin{frame}[standout]
+    Thanks for listening!
+  \end{frame}
 \end{document}
