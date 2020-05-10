@@ -1,0 +1,21 @@
+\tiny
+The by the team developed microTESLA protocol is a smaller version of the TESLA protocol.
+
+The TESLA protocol use digital signature to authenticate initial packages.
+
+The standard TESLA protocol has an overhead size of around 24 bytes for each package.
+
+\bigskip
+
+
+Why this smaller version is developed from the TESLA protocol is because of many reasons. One of them is that digital signature is expensive to compute. It's a challenge to even fit the code in the node's memory.
+
+\bigskip
+
+
+The microTESLA protocol is designed to use symmetric mechanism to authenticate the initial packages instead of digital signature. The key is disclosed only one per epoch in microTESLA instead of in each package.
+
+\bigskip
+
+
+TESLA also store a one-way keychain, but this is to expensive to store in the sensor node. so the microTESLA restricts the number of authenticated senders.
