@@ -66,8 +66,8 @@ void print_results(std::vector<double> sorting_result, int samples,
         file_vector[i].push_back(samples);
 
         std::cout << "N\t\t" << N[i] << '\n';
-        std::cout << "T[ms]\t\t" << n_mean / samples << '\n';
-        std::cout << "Stdev[ms]\t" << standard_deviation(devia_vec) << '\n';
+        std::cout << "T[µs]\t\t" << n_mean / samples << '\n';
+        std::cout << "Stdev[µs]\t" << standard_deviation(devia_vec) << '\n';
         std::cout << "Samples\t\t" << samples << '\n';
         std::cout << '\n';
     }
@@ -80,7 +80,7 @@ void print_results(std::vector<double> sorting_result, int samples,
 int main() {
     srand(time(NULL));
 
-    std::vector<int> N = {2000,  4000,  8000,  10000, 11000};
+    std::vector<int> N = {2000,  4000,  8000,  10000};
     int data_size = 30000;
     int samples = 3;
 

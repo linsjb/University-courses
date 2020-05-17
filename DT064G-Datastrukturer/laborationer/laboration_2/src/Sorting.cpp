@@ -35,7 +35,7 @@ std::vector<double> Sorting::alg_selection_sort() {
                 std::chrono::duration_cast<std::chrono::microseconds>(end_sel -
                                                                       start_sel)
                     .count();
-            result.push_back(elapsed_microseconds_sel / 1000);
+            result.push_back(elapsed_microseconds_sel);
 
             std::copy(data.begin(), (data.begin() + number_of_elements[index]),
                       data_to_sort.begin());
@@ -63,7 +63,7 @@ std::vector<double> Sorting::alg_insertion_sort() {
                 std::chrono::duration_cast<std::chrono::microseconds>(end_ins -
                                                                       start_ins)
                     .count();
-            result.push_back(elapsed_microseconds_ins / 1000);
+            result.push_back(elapsed_microseconds_ins);
 
             std::copy(data.begin(), (data.begin() + number_of_elements[index]),
                       data_to_sort.begin());
@@ -91,7 +91,7 @@ std::vector<double> Sorting::alg_quick_partition_sort() {
                 std::chrono::duration_cast<std::chrono::microseconds>(end_q -
                                                                       start_q)
                     .count();
-            result.push_back(elapsed_microseconds_quick / 1000);
+            result.push_back(elapsed_microseconds_quick);
 
             std::copy(data.begin(), (data.begin() + number_of_elements[index]),
                       data_to_sort.begin());
@@ -120,7 +120,7 @@ std::vector<double> Sorting::alg_quick_median_sort() {
                 std::chrono::duration_cast<std::chrono::microseconds>(end_qm -
                                                                       start_qm);
             int elapsed_microseconds = (int)elapsed_seconds_qm.count();
-            result.push_back(elapsed_microseconds / 1000);
+            result.push_back(elapsed_microseconds);
 
             std::copy(data.begin(), (data.begin() + number_of_elements[index]),
                       data_to_sort.begin());
@@ -148,7 +148,7 @@ std::vector<double> Sorting::alg_std_sort() {
                 std::chrono::duration_cast<std::chrono::microseconds>(end -
                                                                       start);
             int elapsed_microseconds = (int)elapsed_seconds.count();
-            result.push_back(elapsed_microseconds / 1000);
+            result.push_back(elapsed_microseconds);
 
             std::copy(data.begin(), (data.begin() + number_of_elements[index]),
                       data_to_sort.begin());
