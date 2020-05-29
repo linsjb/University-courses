@@ -172,8 +172,7 @@ void dijkstras(int startNode, int endNode, std::vector<std::vector<int>> graph,
         std::stack<int> resultPath;
         bool pushToResultPath = true;
 
-        std::priority_queue<nodeData, std::vector<nodeData>, compare>
-            priorityQueue;
+        std::priority_queue<nodeData, std::vector<nodeData>, compare> priorityQueue;
         std::vector<resultData> result(graph.size(), resultData{0, 0, inf});
 
         // Init. step of result vector and priority queue

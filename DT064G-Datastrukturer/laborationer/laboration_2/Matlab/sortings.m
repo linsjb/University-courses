@@ -1,6 +1,7 @@
 clc
 clear
 %% Selection sort
+
 figure('NumberTitle', 'off', 'Name', 'Selection sort');
 subplot(2,2,1)
 
@@ -9,12 +10,14 @@ asc_sel_sort_x = table2array(ascending_selection_sort(1,:))
 asc_sel_sort_y = table2array(ascending_selection_sort(2,:))
 asc_sel_stddev = table2array(ascending_selection_sort(3,:))
 
-plot(asc_sel_sort_x, asc_sel_sort_y)
-
-errorbar(asc_sel_sort_x, asc_sel_sort_y, asc_sel_stddev)
+f = fit(asc_sel_sort_x(:), asc_sel_sort_y(:), 'poly2');
+plot(f, asc_sel_sort_x, asc_sel_sort_y)
+hold on
+e = errorbar(asc_sel_sort_x, asc_sel_sort_y, asc_sel_stddev, 'b')
+e.LineStyle = 'none';
 
 title('Selection sort - Ascending values')
-%legend({'Data','Std dev'})
+legend({'Data','Fitted curve', 'std dev'})
 
 xlabel('Elements (N)')
 ylabel('T[µs] (Average)')

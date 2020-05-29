@@ -36,31 +36,21 @@ std::vector<std::vector<int>> insert_hash(std::vector<std::vector<int>>hash_tabl
 	return hash_table;
 }
 
-bool search_hash(std::vector<int> primary_no_container, std::vector<std::vector<int>>hash_table, int element_to_find) {
+bool search_hash(std::vector<int> &primary_no_container, std::vector<std::vector<int>> &hash_table, int element_to_find) {
 	int max_value = primary_no_container.back();
 
 	//While element exists in the number container.
-	// std::cout << element_to_find << " & " << max_value << std::endl; // NOTE print control
 	if (element_to_find <= max_value) {
 		int index = element_to_find % hash_table.size();
-
-		// std::cout <<"element_to_find:" <<element_to_find << std::endl; // NOTE print control
-
-		// std::cout <<"hash_table.size():"<< hash_table.size() << std::endl; // NOTE print control
-
-		// std::cout << "Index: "<< index << "\n"; // NOTE print control
 
 		std::vector<int>::iterator iterator = std::find((hash_table[index].begin()), (hash_table[index].end()), element_to_find);
 		//std::cout << "star iterator "<< *iterator << std::endl;
 		if (iterator != (hash_table[index].end())) {
-			// std::cout << "Element exists in the array!" << "\n"; // NOTE print control
 			return true;
 		}
-		// std::cout << "Element does not exists in the array!" << "\n"; // NOTE print control
 		return false;
 	}
 	else {
-		// std::cout << "Element does not exists in the array!" << "\n"; // NOTE print control
 		return false;
 	}
 

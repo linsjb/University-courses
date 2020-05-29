@@ -22,15 +22,12 @@ private:
   std::vector<int> number_of_elements;
   std::vector<double> result;
   int samples;
-  int number_to_find;
-  bool info_print;
 
 public:
     Alg_search(std::vector<int>elems);
 
     void set_samples(int setSamples);
     void set_data(std::vector<int> setData);
-    void set_info_print(bool check);
     int numbers_to_find();
 
     std::vector<double> alg_linear_search();

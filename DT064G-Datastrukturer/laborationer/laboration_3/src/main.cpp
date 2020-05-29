@@ -86,7 +86,6 @@ int main() {
 	alg_search.set_samples(samples);
 
 	alg_search.set_data(prime_number_generator(data_size));
-	alg_search.set_info_print(false);
 
 
 	int searching_choice;
@@ -95,22 +94,18 @@ int main() {
 	std::cin >> searching_choice;
 
 	switch (searching_choice) {
-		//Linear search
 	case 1:
 		print_results(alg_search.alg_linear_search(), samples, N, "Linear search", "linear_search.txt");
 		break;
 
-	//Binary search
 	case 2:
 		print_results(alg_search.alg_binary_search(), samples, N, "Binary search", "binary_search.txt");
 		break;
 
-	// BST
 	case 3:
 		print_results(alg_search.alg_bst(), samples, N, "BST", "binary_search_tree.txt");
 		break;
 
-	// Hash table
 	case 4:
 		print_results(alg_search.alg_hash_table(), samples, N, "Hash table", "hash_table.txt");
 		break;
