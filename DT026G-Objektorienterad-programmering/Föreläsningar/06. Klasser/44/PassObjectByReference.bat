@@ -1,3 +1,0 @@
-echo on
-PassObjectByReference.exe
-pause
